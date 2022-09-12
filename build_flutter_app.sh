@@ -9,7 +9,7 @@ NC='\033[0m'
 echo -e " ${GREEN} Build Flutter App ${NC} "
 echo -e " ${GREEN} Increase version ${NC} "
 
-perl -i -pe 's/^(version:\s+\d+\.\d+\.\d+\+)(\d+)$/$1.($2+1)/e' pubspec.yaml
+perl -i -pe 's/^(version:\s+\d+\.\d+\.)(\d+)(\+)(\d+)$/$1.($2+1).$3.($4+1)/e' pubspec.yaml
 
 echo ""
 echo ""
@@ -94,4 +94,3 @@ if [ $resp == "Y" ] || [ $resp == "y" ]; then
 fi
 
 echo -e " ${GREEN} All Done. You can find builds in build folder ${NC} "
-
